@@ -47,6 +47,7 @@ class Configuration {
 ## How to Run the App
 
 ```
+ make flutter_build_runner
  make run_mobile
 ```
 
