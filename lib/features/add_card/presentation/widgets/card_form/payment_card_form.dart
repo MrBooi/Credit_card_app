@@ -25,6 +25,17 @@ class _PaymentCardFormState extends State<PaymentCardForm> {
       child: Column(
         children: [
           AppTextFormFieldWidget(
+            hintText: 'Country Issuer',
+            helperText: 'Country Issuer',
+            validator: CountryIssuerValidator.validate,
+            onChanged: (val) {
+              sl<PaymentCardCubit>().updatedCountryIssuer(
+                val,
+              );
+            },
+          ),
+          const SizedBox(height: 5.0),
+          AppTextFormFieldWidget(
             hintText: 'Name on card',
             helperText: 'Cardholder name',
             validator: CardNameValidator.validate,

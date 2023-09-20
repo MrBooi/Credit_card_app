@@ -47,6 +47,13 @@ class _AddCarPageState extends State<AddCarPage> {
             () => null,
             (a) => a.fold(
               (failure) {
+                if (failure is CountryCardIsBannedFailure) {
+                  SnackBarHelper().showSnackBar(
+                    context: context,
+                    content: 'Unable to saved banned country card.',
+                  );
+                }
+
                 if (failure is CardAlreadyExistsFailure) {
                   SnackBarHelper().showSnackBar(
                     context: context,
