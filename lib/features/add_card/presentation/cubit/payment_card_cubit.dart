@@ -35,6 +35,14 @@ class PaymentCardCubit extends Cubit<PaymentCardState> {
     );
   }
 
+  Future<void> updatedCountryIssuer(String country) async {
+    emit(
+      state.copyWith(
+        cardModel: state.cardModel.copyWith(countryIssuer: country),
+      ),
+    );
+  }
+
   Future<void> updatedCardNumber(String number) async {
     if (number.isEmpty) {
       emit(

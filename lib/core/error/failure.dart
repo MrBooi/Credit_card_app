@@ -9,4 +9,6 @@ abstract class Failure with _$Failure {
   const factory Failure.cacheFailure() = CacheFailure;
   const factory Failure.socketFailure() = SocketFailure;
   const factory Failure.cardAlreadyExistsFailure() = CardAlreadyExistsFailure;
+  const factory Failure.countryCardIsBannedFailure() =
+      CountryCardIsBannedFailure;
 }

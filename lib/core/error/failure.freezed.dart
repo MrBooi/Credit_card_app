@@ -22,6 +22,7 @@ mixin _$Failure {
     required TResult Function() cacheFailure,
     required TResult Function() socketFailure,
     required TResult Function() cardAlreadyExistsFailure,
+    required TResult Function() countryCardIsBannedFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +31,7 @@ mixin _$Failure {
     TResult? Function()? cacheFailure,
     TResult? Function()? socketFailure,
     TResult? Function()? cardAlreadyExistsFailure,
+    TResult? Function()? countryCardIsBannedFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +40,7 @@ mixin _$Failure {
     TResult Function()? cacheFailure,
     TResult Function()? socketFailure,
     TResult Function()? cardAlreadyExistsFailure,
+    TResult Function()? countryCardIsBannedFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -48,6 +51,8 @@ mixin _$Failure {
     required TResult Function(SocketFailure value) socketFailure,
     required TResult Function(CardAlreadyExistsFailure value)
         cardAlreadyExistsFailure,
+    required TResult Function(CountryCardIsBannedFailure value)
+        countryCardIsBannedFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -56,6 +61,8 @@ mixin _$Failure {
     TResult? Function(CacheFailure value)? cacheFailure,
     TResult? Function(SocketFailure value)? socketFailure,
     TResult? Function(CardAlreadyExistsFailure value)? cardAlreadyExistsFailure,
+    TResult? Function(CountryCardIsBannedFailure value)?
+        countryCardIsBannedFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -64,6 +71,8 @@ mixin _$Failure {
     TResult Function(CacheFailure value)? cacheFailure,
     TResult Function(SocketFailure value)? socketFailure,
     TResult Function(CardAlreadyExistsFailure value)? cardAlreadyExistsFailure,
+    TResult Function(CountryCardIsBannedFailure value)?
+        countryCardIsBannedFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -134,6 +143,7 @@ class _$ServerFailure with DiagnosticableTreeMixin implements ServerFailure {
     required TResult Function() cacheFailure,
     required TResult Function() socketFailure,
     required TResult Function() cardAlreadyExistsFailure,
+    required TResult Function() countryCardIsBannedFailure,
   }) {
     return serverFailure();
   }
@@ -145,6 +155,7 @@ class _$ServerFailure with DiagnosticableTreeMixin implements ServerFailure {
     TResult? Function()? cacheFailure,
     TResult? Function()? socketFailure,
     TResult? Function()? cardAlreadyExistsFailure,
+    TResult? Function()? countryCardIsBannedFailure,
   }) {
     return serverFailure?.call();
   }
@@ -156,6 +167,7 @@ class _$ServerFailure with DiagnosticableTreeMixin implements ServerFailure {
     TResult Function()? cacheFailure,
     TResult Function()? socketFailure,
     TResult Function()? cardAlreadyExistsFailure,
+    TResult Function()? countryCardIsBannedFailure,
     required TResult orElse(),
   }) {
     if (serverFailure != null) {
@@ -172,6 +184,8 @@ class _$ServerFailure with DiagnosticableTreeMixin implements ServerFailure {
     required TResult Function(SocketFailure value) socketFailure,
     required TResult Function(CardAlreadyExistsFailure value)
         cardAlreadyExistsFailure,
+    required TResult Function(CountryCardIsBannedFailure value)
+        countryCardIsBannedFailure,
   }) {
     return serverFailure(this);
   }
@@ -183,6 +197,8 @@ class _$ServerFailure with DiagnosticableTreeMixin implements ServerFailure {
     TResult? Function(CacheFailure value)? cacheFailure,
     TResult? Function(SocketFailure value)? socketFailure,
     TResult? Function(CardAlreadyExistsFailure value)? cardAlreadyExistsFailure,
+    TResult? Function(CountryCardIsBannedFailure value)?
+        countryCardIsBannedFailure,
   }) {
     return serverFailure?.call(this);
   }
@@ -194,6 +210,8 @@ class _$ServerFailure with DiagnosticableTreeMixin implements ServerFailure {
     TResult Function(CacheFailure value)? cacheFailure,
     TResult Function(SocketFailure value)? socketFailure,
     TResult Function(CardAlreadyExistsFailure value)? cardAlreadyExistsFailure,
+    TResult Function(CountryCardIsBannedFailure value)?
+        countryCardIsBannedFailure,
     required TResult orElse(),
   }) {
     if (serverFailure != null) {
@@ -255,6 +273,7 @@ class _$CacheFailure with DiagnosticableTreeMixin implements CacheFailure {
     required TResult Function() cacheFailure,
     required TResult Function() socketFailure,
     required TResult Function() cardAlreadyExistsFailure,
+    required TResult Function() countryCardIsBannedFailure,
   }) {
     return cacheFailure();
   }
@@ -266,6 +285,7 @@ class _$CacheFailure with DiagnosticableTreeMixin implements CacheFailure {
     TResult? Function()? cacheFailure,
     TResult? Function()? socketFailure,
     TResult? Function()? cardAlreadyExistsFailure,
+    TResult? Function()? countryCardIsBannedFailure,
   }) {
     return cacheFailure?.call();
   }
@@ -277,6 +297,7 @@ class _$CacheFailure with DiagnosticableTreeMixin implements CacheFailure {
     TResult Function()? cacheFailure,
     TResult Function()? socketFailure,
     TResult Function()? cardAlreadyExistsFailure,
+    TResult Function()? countryCardIsBannedFailure,
     required TResult orElse(),
   }) {
     if (cacheFailure != null) {
@@ -293,6 +314,8 @@ class _$CacheFailure with DiagnosticableTreeMixin implements CacheFailure {
     required TResult Function(SocketFailure value) socketFailure,
     required TResult Function(CardAlreadyExistsFailure value)
         cardAlreadyExistsFailure,
+    required TResult Function(CountryCardIsBannedFailure value)
+        countryCardIsBannedFailure,
   }) {
     return cacheFailure(this);
   }
@@ -304,6 +327,8 @@ class _$CacheFailure with DiagnosticableTreeMixin implements CacheFailure {
     TResult? Function(CacheFailure value)? cacheFailure,
     TResult? Function(SocketFailure value)? socketFailure,
     TResult? Function(CardAlreadyExistsFailure value)? cardAlreadyExistsFailure,
+    TResult? Function(CountryCardIsBannedFailure value)?
+        countryCardIsBannedFailure,
   }) {
     return cacheFailure?.call(this);
   }
@@ -315,6 +340,8 @@ class _$CacheFailure with DiagnosticableTreeMixin implements CacheFailure {
     TResult Function(CacheFailure value)? cacheFailure,
     TResult Function(SocketFailure value)? socketFailure,
     TResult Function(CardAlreadyExistsFailure value)? cardAlreadyExistsFailure,
+    TResult Function(CountryCardIsBannedFailure value)?
+        countryCardIsBannedFailure,
     required TResult orElse(),
   }) {
     if (cacheFailure != null) {
@@ -376,6 +403,7 @@ class _$SocketFailure with DiagnosticableTreeMixin implements SocketFailure {
     required TResult Function() cacheFailure,
     required TResult Function() socketFailure,
     required TResult Function() cardAlreadyExistsFailure,
+    required TResult Function() countryCardIsBannedFailure,
   }) {
     return socketFailure();
   }
@@ -387,6 +415,7 @@ class _$SocketFailure with DiagnosticableTreeMixin implements SocketFailure {
     TResult? Function()? cacheFailure,
     TResult? Function()? socketFailure,
     TResult? Function()? cardAlreadyExistsFailure,
+    TResult? Function()? countryCardIsBannedFailure,
   }) {
     return socketFailure?.call();
   }
@@ -398,6 +427,7 @@ class _$SocketFailure with DiagnosticableTreeMixin implements SocketFailure {
     TResult Function()? cacheFailure,
     TResult Function()? socketFailure,
     TResult Function()? cardAlreadyExistsFailure,
+    TResult Function()? countryCardIsBannedFailure,
     required TResult orElse(),
   }) {
     if (socketFailure != null) {
@@ -414,6 +444,8 @@ class _$SocketFailure with DiagnosticableTreeMixin implements SocketFailure {
     required TResult Function(SocketFailure value) socketFailure,
     required TResult Function(CardAlreadyExistsFailure value)
         cardAlreadyExistsFailure,
+    required TResult Function(CountryCardIsBannedFailure value)
+        countryCardIsBannedFailure,
   }) {
     return socketFailure(this);
   }
@@ -425,6 +457,8 @@ class _$SocketFailure with DiagnosticableTreeMixin implements SocketFailure {
     TResult? Function(CacheFailure value)? cacheFailure,
     TResult? Function(SocketFailure value)? socketFailure,
     TResult? Function(CardAlreadyExistsFailure value)? cardAlreadyExistsFailure,
+    TResult? Function(CountryCardIsBannedFailure value)?
+        countryCardIsBannedFailure,
   }) {
     return socketFailure?.call(this);
   }
@@ -436,6 +470,8 @@ class _$SocketFailure with DiagnosticableTreeMixin implements SocketFailure {
     TResult Function(CacheFailure value)? cacheFailure,
     TResult Function(SocketFailure value)? socketFailure,
     TResult Function(CardAlreadyExistsFailure value)? cardAlreadyExistsFailure,
+    TResult Function(CountryCardIsBannedFailure value)?
+        countryCardIsBannedFailure,
     required TResult orElse(),
   }) {
     if (socketFailure != null) {
@@ -501,6 +537,7 @@ class _$CardAlreadyExistsFailure
     required TResult Function() cacheFailure,
     required TResult Function() socketFailure,
     required TResult Function() cardAlreadyExistsFailure,
+    required TResult Function() countryCardIsBannedFailure,
   }) {
     return cardAlreadyExistsFailure();
   }
@@ -512,6 +549,7 @@ class _$CardAlreadyExistsFailure
     TResult? Function()? cacheFailure,
     TResult? Function()? socketFailure,
     TResult? Function()? cardAlreadyExistsFailure,
+    TResult? Function()? countryCardIsBannedFailure,
   }) {
     return cardAlreadyExistsFailure?.call();
   }
@@ -523,6 +561,7 @@ class _$CardAlreadyExistsFailure
     TResult Function()? cacheFailure,
     TResult Function()? socketFailure,
     TResult Function()? cardAlreadyExistsFailure,
+    TResult Function()? countryCardIsBannedFailure,
     required TResult orElse(),
   }) {
     if (cardAlreadyExistsFailure != null) {
@@ -539,6 +578,8 @@ class _$CardAlreadyExistsFailure
     required TResult Function(SocketFailure value) socketFailure,
     required TResult Function(CardAlreadyExistsFailure value)
         cardAlreadyExistsFailure,
+    required TResult Function(CountryCardIsBannedFailure value)
+        countryCardIsBannedFailure,
   }) {
     return cardAlreadyExistsFailure(this);
   }
@@ -550,6 +591,8 @@ class _$CardAlreadyExistsFailure
     TResult? Function(CacheFailure value)? cacheFailure,
     TResult? Function(SocketFailure value)? socketFailure,
     TResult? Function(CardAlreadyExistsFailure value)? cardAlreadyExistsFailure,
+    TResult? Function(CountryCardIsBannedFailure value)?
+        countryCardIsBannedFailure,
   }) {
     return cardAlreadyExistsFailure?.call(this);
   }
@@ -561,6 +604,8 @@ class _$CardAlreadyExistsFailure
     TResult Function(CacheFailure value)? cacheFailure,
     TResult Function(SocketFailure value)? socketFailure,
     TResult Function(CardAlreadyExistsFailure value)? cardAlreadyExistsFailure,
+    TResult Function(CountryCardIsBannedFailure value)?
+        countryCardIsBannedFailure,
     required TResult orElse(),
   }) {
     if (cardAlreadyExistsFailure != null) {
@@ -572,4 +617,140 @@ class _$CardAlreadyExistsFailure
 
 abstract class CardAlreadyExistsFailure implements Failure {
   const factory CardAlreadyExistsFailure() = _$CardAlreadyExistsFailure;
+}
+
+/// @nodoc
+abstract class _$$CountryCardIsBannedFailureCopyWith<$Res> {
+  factory _$$CountryCardIsBannedFailureCopyWith(
+          _$CountryCardIsBannedFailure value,
+          $Res Function(_$CountryCardIsBannedFailure) then) =
+      __$$CountryCardIsBannedFailureCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$CountryCardIsBannedFailureCopyWithImpl<$Res>
+    extends _$FailureCopyWithImpl<$Res, _$CountryCardIsBannedFailure>
+    implements _$$CountryCardIsBannedFailureCopyWith<$Res> {
+  __$$CountryCardIsBannedFailureCopyWithImpl(
+      _$CountryCardIsBannedFailure _value,
+      $Res Function(_$CountryCardIsBannedFailure) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$CountryCardIsBannedFailure
+    with DiagnosticableTreeMixin
+    implements CountryCardIsBannedFailure {
+  const _$CountryCardIsBannedFailure();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'Failure.countryCardIsBannedFailure()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+        .add(DiagnosticsProperty('type', 'Failure.countryCardIsBannedFailure'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CountryCardIsBannedFailure);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() serverFailure,
+    required TResult Function() cacheFailure,
+    required TResult Function() socketFailure,
+    required TResult Function() cardAlreadyExistsFailure,
+    required TResult Function() countryCardIsBannedFailure,
+  }) {
+    return countryCardIsBannedFailure();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? serverFailure,
+    TResult? Function()? cacheFailure,
+    TResult? Function()? socketFailure,
+    TResult? Function()? cardAlreadyExistsFailure,
+    TResult? Function()? countryCardIsBannedFailure,
+  }) {
+    return countryCardIsBannedFailure?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? serverFailure,
+    TResult Function()? cacheFailure,
+    TResult Function()? socketFailure,
+    TResult Function()? cardAlreadyExistsFailure,
+    TResult Function()? countryCardIsBannedFailure,
+    required TResult orElse(),
+  }) {
+    if (countryCardIsBannedFailure != null) {
+      return countryCardIsBannedFailure();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ServerFailure value) serverFailure,
+    required TResult Function(CacheFailure value) cacheFailure,
+    required TResult Function(SocketFailure value) socketFailure,
+    required TResult Function(CardAlreadyExistsFailure value)
+        cardAlreadyExistsFailure,
+    required TResult Function(CountryCardIsBannedFailure value)
+        countryCardIsBannedFailure,
+  }) {
+    return countryCardIsBannedFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ServerFailure value)? serverFailure,
+    TResult? Function(CacheFailure value)? cacheFailure,
+    TResult? Function(SocketFailure value)? socketFailure,
+    TResult? Function(CardAlreadyExistsFailure value)? cardAlreadyExistsFailure,
+    TResult? Function(CountryCardIsBannedFailure value)?
+        countryCardIsBannedFailure,
+  }) {
+    return countryCardIsBannedFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ServerFailure value)? serverFailure,
+    TResult Function(CacheFailure value)? cacheFailure,
+    TResult Function(SocketFailure value)? socketFailure,
+    TResult Function(CardAlreadyExistsFailure value)? cardAlreadyExistsFailure,
+    TResult Function(CountryCardIsBannedFailure value)?
+        countryCardIsBannedFailure,
+    required TResult orElse(),
+  }) {
+    if (countryCardIsBannedFailure != null) {
+      return countryCardIsBannedFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CountryCardIsBannedFailure implements Failure {
+  const factory CountryCardIsBannedFailure() = _$CountryCardIsBannedFailure;
 }

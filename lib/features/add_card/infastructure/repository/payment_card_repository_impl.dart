@@ -1,3 +1,4 @@
+import 'package:card_app/core/configaration.dart';
 import 'package:card_app/core/error/failure.dart';
 import 'package:card_app/features/add_card/domain/card_model.dart';
 import 'package:card_app/features/add_card/infastructure/data_source/payment_card_local_data_source.dart';
@@ -10,8 +11,9 @@ abstract class PaymentCardRepository {
 
 class PaymentCardRepositoryImpl implements PaymentCardRepository {
   final PaymentCardLocalDataSourceImp local;
+  final Configuration configuration;
 
-  PaymentCardRepositoryImpl(this.local);
+  PaymentCardRepositoryImpl(this.local, this.configuration);
   @override
   Future<Either<Failure, List<CardModel>>> getCardsList() async {
     try {
@@ -26,8 +28,26 @@ class PaymentCardRepositoryImpl implements PaymentCardRepository {
   Future<Either<Failure, Unit>> saveCard(CardModel model) async {
     try {
       final cardExist = await local.cardExists(model.number);
+      var isCardBanned = false;
 
-      if (cardExist) {
+      final bannedList = configuration.bannedListOfCountry;
+
+      final findCountry = bannedList.indexWhere(
+        (e) => e.containsKey(
+          model.countryIssuer.toLowerCase(),
+        ),
+      );
+
+      if (findCountry >= 0) {
+        final cardType = CardModel.cardBrand(model.number).toLowerCase();
+
+        isCardBanned =
+            bannedList[findCountry].values.toList()[0].contains(cardType);
+      }
+
+      if (isCardBanned) {
+        return left(const Failure.countryCardIsBannedFailure());
+      } else if (cardExist) {
         return left(const Failure.cardAlreadyExistsFailure());
       } else {
         await local.saveCard(model);

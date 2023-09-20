@@ -5,6 +5,7 @@ class CardModel {
   final String expiryMonth;
   final String expiryYear;
   final String cvv;
+  final String countryIssuer;
 
   CardModel({
     this.id,
@@ -13,6 +14,7 @@ class CardModel {
     required this.expiryMonth,
     required this.expiryYear,
     required this.cvv,
+    required this.countryIssuer,
   });
 
   factory CardModel.fromJson(Map<String, dynamic> json) {
@@ -23,6 +25,7 @@ class CardModel {
       expiryMonth: json["expiry_month"] ?? "",
       expiryYear: json["expiry_year"] ?? "",
       cvv: json["cvv"],
+      countryIssuer: json['country_issuer'],
     );
   }
 
@@ -33,7 +36,8 @@ class CardModel {
       "number": model.number,
       "expiry_month": model.expiryMonth,
       "expiry_year": model.expiryYear,
-      "cvv": model.cvv
+      "cvv": model.cvv,
+      "country_issuer": model.countryIssuer,
     };
   }
 
@@ -43,6 +47,7 @@ class CardModel {
         holder: "Card holder",
         number: "0000 0000 0000 0000",
         expiryYear: '',
+        countryIssuer: '',
       );
 
   static String cardBrand(String cardNumber) {
@@ -92,6 +97,7 @@ class CardModel {
     String? expiryMonth,
     String? expiryYear,
     String? cvv,
+    String? countryIssuer,
   }) {
     return CardModel(
       id: id ?? this.id,
@@ -100,6 +106,7 @@ class CardModel {
       expiryMonth: expiryMonth ?? this.expiryMonth,
       expiryYear: expiryYear ?? this.expiryYear,
       cvv: cvv ?? this.cvv,
+      countryIssuer: countryIssuer ?? this.countryIssuer,
     );
   }
 
@@ -113,17 +120,18 @@ class CardModel {
         other.number == number &&
         other.expiryMonth == expiryMonth &&
         other.expiryYear == expiryYear &&
-        other.cvv == cvv;
+        other.cvv == cvv &&
+        other.countryIssuer == countryIssuer;
   }
 
   @override
   int get hashCode {
     return id.hashCode ^
         holder.hashCode ^
-        // brand.hashCode ^
         number.hashCode ^
         expiryMonth.hashCode ^
         expiryYear.hashCode ^
-        cvv.hashCode;
+        cvv.hashCode ^
+        countryIssuer.hashCode;
   }
 }

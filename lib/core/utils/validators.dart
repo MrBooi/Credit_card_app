@@ -73,3 +73,19 @@ class CardNameValidator {
     return null;
   }
 }
+
+class CountryIssuerValidator {
+  static String? validate(String? value) {
+    if (value != null) {
+      if (value.isEmpty) {
+        return 'Please enter the name of the country issuer';
+      }
+
+      if (value.length < 2) {
+        return "Invalid country name";
+      }
+    }
+
+    return null;
+  }
+}
