@@ -44,4 +44,27 @@ class Configuration {
   ];
 }
 ```
-## How To run the App
+## How to Run the App
+
+```
+ make run_mobile
+```
+
+## Core Dependency Packages:
+
+- freezed_annotation: A code generation package for immutable data classes in Dart.
+- json_annotation: A package to generate JSON serialization and deserialization code.
+- flutter_bloc: A state management library that follows the BLoC (Business Logic Component) architecture.
+- get_it: A simple service locator for Dart and Flutter projects, providing a convenient way to perform dependency injection.
+- path_provider: A plugin for getting commonly used locations on the filesystem.
+- flutter_scan_tools: A package for credit card scanning functionality.
+- permission_handler: A package for handling runtime permissions in Flutter.
+- hive: A lightweight and efficient key-value store for Flutter that can be used for local storage.
+- dartz: A functional programming package that provides algebraic data types and functional constructs in Dart
+
+
+# Dev Dependency Packages
+
+- freezer: A package to generate boilerplate code for immutable data classes.
+- json_serializable: A package to generate JSON serialization and deserialization code.
+- build_runner: A tool for running code generation and other tasks during the build process.
