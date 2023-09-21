@@ -1,9 +1,11 @@
 import 'package:card_app/core/input_mask.dart';
 import 'package:card_app/core/shared/app_text_form_field.dart';
 import 'package:card_app/core/utils/validators.dart';
+import 'package:card_app/features/add_card/domain/card_model.dart';
 import 'package:card_app/features/add_card/presentation/cubit/payment_card_cubit.dart';
 import 'package:card_app/locator.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class PaymentCardForm extends StatefulWidget {
   final GlobalKey<FormState> form;
@@ -19,6 +21,9 @@ class PaymentCardForm extends StatefulWidget {
 class _PaymentCardFormState extends State<PaymentCardForm> {
   @override
   Widget build(BuildContext context) {
+    final model = context.select<PaymentCardCubit, CardModel>(
+      (val) => val.state.cardModel,
+    );
     return Form(
       key: widget.form,
       autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -50,6 +55,7 @@ class _PaymentCardFormState extends State<PaymentCardForm> {
             helperText: "Card Number",
             hintText: "0000 0000 0000 0000",
             keyboardType: TextInputType.number,
+            initialValue: model.number,
             validator: CardNumberValidator.validate,
             inputFormatters: [
               MaskedTextInputFormatter(
@@ -71,6 +77,7 @@ class _PaymentCardFormState extends State<PaymentCardForm> {
                 child: AppTextFormFieldWidget(
                   helperText: "Expiry",
                   hintText: "01/20",
+                  initialValue: "${model.expiryMonth}/${model.expiryYear}",
                   validator: CardExpiryValidator.validate,
                   inputFormatters: [
                     MaskedTextInputFormatter(

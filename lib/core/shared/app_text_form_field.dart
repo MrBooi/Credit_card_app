@@ -20,12 +20,14 @@ class AppTextFormFieldWidget extends StatelessWidget {
   final Function(String)? onChanged;
   final bool? enabled;
   final int? maxLength;
+  final String? initialValue;
 
   const AppTextFormFieldWidget({
     Key? key,
     required this.hintText,
     required this.helperText,
     required this.onChanged,
+    this.initialValue,
     this.isPassword = false,
     this.controller,
     this.node,
@@ -72,6 +74,7 @@ class AppTextFormFieldWidget extends StatelessWidget {
                 children: <Widget>[
                   Expanded(
                     child: TextFormField(
+                      initialValue: initialValue,
                       controller: controller,
                       focusNode: node,
                       autovalidateMode: autovalidateMode,
