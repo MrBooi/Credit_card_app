@@ -140,20 +140,15 @@ class _AddCarPageState extends State<AddCarPage> {
   }
 
   void _startScan() async {
-    //await Permission.camera.request();
+    await Permission.camera.request();
     // ignore: use_build_context_synchronously
-    final scanResult = CardScanResul(
-      cardNumber: CardNumber(type: CardType.Discover, number: '56666666'),
-      expiry: '12/34',
-      holder: '',
+    final scanResult = await FlutterScanTools.scanCard(
+      context,
+      options: const CardScanOptions(
+        requireHolder: true,
+        requireExpiry: true,
+      ),
     );
-    //  await FlutterScanTools.scanCard(
-    //   context,
-    //   options: const CardScanOptions(
-    //     requireHolder: true,
-    //     requireExpiry: true,
-    //   ),
-    // );
 
     if (scanResult != null) {
       sl<PaymentCardCubit>().updatedCardNumber(scanResult.cardNumber.number);
