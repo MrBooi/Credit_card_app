@@ -44,21 +44,11 @@ class PaymentCardCubit extends Cubit<PaymentCardState> {
   }
 
   Future<void> updatedCardNumber(String number) async {
-    if (number.isEmpty) {
-      emit(
-        state.copyWith(
-          cardModel: state.cardModel.copyWith(
-            number: CardModel.empty().number,
-          ),
-        ),
-      );
-    } else {
-      emit(
-        state.copyWith(
-          cardModel: state.cardModel.copyWith(number: number),
-        ),
-      );
-    }
+    emit(
+      state.copyWith(
+        cardModel: state.cardModel.copyWith(number: number),
+      ),
+    );
   }
 
   Future<void> updatedCardCVV(String cvv) async {
@@ -80,10 +70,10 @@ class PaymentCardCubit extends Cubit<PaymentCardState> {
 
   Future<void> updatedCardExpiryDate(String expiry) async {
     const String dText = "00/00";
-
     List d = [];
+
     if (expiry.isEmpty) {
-      d = dText.split("/");
+      return;
     } else {
       d = (expiry + dText.substring(expiry.length)).split("/");
     }

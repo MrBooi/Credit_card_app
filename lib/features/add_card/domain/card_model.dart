@@ -43,7 +43,7 @@ class CardModel {
 
   factory CardModel.empty() => CardModel(
         cvv: "***",
-        expiryMonth: "00",
+        expiryMonth: "",
         holder: "Card holder",
         number: "0000 0000 0000 0000",
         expiryYear: '',
@@ -51,6 +51,9 @@ class CardModel {
       );
 
   static String cardBrand(String cardNumber) {
+    if (cardNumber.isEmpty) {
+      return "";
+    }
     final s = cardNumber[0];
     String firstTwoDigits = "";
     if (cardNumber.length >= 2) {

@@ -5,13 +5,15 @@ import 'package:card_app/features/add_card/domain/card_model.dart';
 import 'package:card_app/features/add_card/presentation/cubit/payment_card_cubit.dart';
 import 'package:card_app/locator.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+// import 'package:flutter_bloc/flutter_bloc.dart';
 
 class PaymentCardForm extends StatefulWidget {
   final GlobalKey<FormState> form;
+  final CardModel model;
   const PaymentCardForm({
     super.key,
     required this.form,
+    required this.model,
   });
 
   @override
@@ -19,11 +21,15 @@ class PaymentCardForm extends StatefulWidget {
 }
 
 class _PaymentCardFormState extends State<PaymentCardForm> {
+  final _cardController = TextEditingController();
+  final _cardExpiryController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
-    final model = context.select<PaymentCardCubit, CardModel>(
-      (val) => val.state.cardModel,
-    );
+    _cardController.text = widget.model.number;
+    _cardExpiryController.text =
+        "${widget.model.expiryMonth}/${widget.model.expiryYear}";
+
     return Form(
       key: widget.form,
       autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -55,8 +61,8 @@ class _PaymentCardFormState extends State<PaymentCardForm> {
             helperText: "Card Number",
             hintText: "0000 0000 0000 0000",
             keyboardType: TextInputType.number,
-            initialValue: model.number,
             validator: CardNumberValidator.validate,
+            controller: _cardController,
             inputFormatters: [
               MaskedTextInputFormatter(
                 mask: 'xxxx xxxx xxxx xxxx',
@@ -77,7 +83,7 @@ class _PaymentCardFormState extends State<PaymentCardForm> {
                 child: AppTextFormFieldWidget(
                   helperText: "Expiry",
                   hintText: "01/20",
-                  initialValue: "${model.expiryMonth}/${model.expiryYear}",
+                  controller: _cardExpiryController,
                   validator: CardExpiryValidator.validate,
                   inputFormatters: [
                     MaskedTextInputFormatter(
