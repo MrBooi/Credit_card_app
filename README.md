@@ -20,6 +20,8 @@ card number, and infer the cart type.
 ## How to configure a list of banned countries?
 A list of banned countries could be configured by adding a country with the type of cards that are banned, see the code below.
 
+Note: on the list of banned countries we do a lock-up to see if the card type you're providing is not banned and if its banned we block you from saving the card.
+
 ```
 class Configuration {
   final List<Map<String, dynamic>> bannedListOfCountry = [
